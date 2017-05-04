@@ -1,5 +1,7 @@
 package com.backend.services;
 
-public interface CustomerService {
+import com.backend.model.Customer;
 
+public interface CustomerService {
+	void addcustomer(Customer customers);
 }

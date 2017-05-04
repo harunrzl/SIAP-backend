@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,7 +24,9 @@ public class Customer implements Serializable {
 	
 	@Id
 	@NotNull
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long costumerid;
+	
 	private String costumername;
 	private String governmentname;
 	private String costumeraddress;
@@ -43,6 +47,7 @@ public class Customer implements Serializable {
     private Date registerdate;
 	private Date updatedate;
 	private Date expdate;
+	private String rentstatus;
 	
 	public Customer (){};
 	public Long getCostumerid() {
@@ -123,5 +128,10 @@ public class Customer implements Serializable {
 	public void setExpdate(Date expdate) {
 		this.expdate = expdate;
 	}
-	
+	public String getRentstatus() {
+		return rentstatus;
+	}
+	public void setRentstatus(String rentstatus) {
+		this.rentstatus = rentstatus;
+	}
 }

@@ -1,18 +1,15 @@
 package com.backend.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.CreationTimestamp;
+
 
 @Entity
 public class Customer implements Serializable {
@@ -33,21 +30,14 @@ public class Customer implements Serializable {
 	private String costumeremail;
 	@NotNull
 	private String costumerphone;
-	private String packetname;
-	private String packetprize;
+	
 	
 	@NotNull
 	private String customer_username;
 	@NotNull
 	private String customer_password;
 
-	@CreationTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false)
-    private Date registerdate;
-	private Date updatedate;
-	private Date expdate;
-	private String rentstatus;
+	
 	
 	public Customer (){};
 	public Long getCostumerid() {
@@ -86,18 +76,6 @@ public class Customer implements Serializable {
 	public void setCostumerphone(String costumerphone) {
 		this.costumerphone = costumerphone;
 	}
-	public String getPacketname() {
-		return packetname;
-	}
-	public void setPacketname(String packetname) {
-		this.packetname = packetname;
-	}
-	public String getPacketprize() {
-		return packetprize;
-	}
-	public void setPacketprize(String packetprize) {
-		this.packetprize = packetprize;
-	}
 	public String getCustomer_username() {
 		return customer_username;
 	}
@@ -109,29 +87,5 @@ public class Customer implements Serializable {
 	}
 	public void setCustomer_password(String customer_password) {
 		this.customer_password = customer_password;
-	}
-	public Date getRegisterdate() {
-		return registerdate;
-	}
-	public void setRegisterdate(Date registerdate) {
-		this.registerdate = registerdate;
-	}
-	public Date getUpdatedate() {
-		return updatedate;
-	}
-	public void setUpdatedate(Date updatedate) {
-		this.updatedate = updatedate;
-	}
-	public Date getExpdate() {
-		return expdate;
-	}
-	public void setExpdate(Date expdate) {
-		this.expdate = expdate;
-	}
-	public String getRentstatus() {
-		return rentstatus;
-	}
-	public void setRentstatus(String rentstatus) {
-		this.rentstatus = rentstatus;
 	}
 }
